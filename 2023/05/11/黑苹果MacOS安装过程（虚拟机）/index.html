@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/hm9245-dnd.jpg">
+  <link rel="icon" href="/img/hm9245-dnd.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="haoming9245">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文章借鉴文章： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;383415378 最详细AMD Ryzen CPU，VMware 15安装macOS 10.15.x Catalina 记录（第一篇）_city_happiness的博客-CSDN博客       准备工具：      Mac系统镜像（本文章以10.15为例）      VMware虚拟机（任何版本都可）      u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑苹果MacOS安装过程（虚拟机）">
+<meta property="og:url" content="https://haoming9245.top/2023/05/11/%E9%BB%91%E8%8B%B9%E6%9E%9CMacOS%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/index.html">
+<meta property="og:site_name" content="hm9245-dnd&#39;s blog">
+<meta property="og:description" content="本文章借鉴文章： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;383415378 最详细AMD Ryzen CPU，VMware 15安装macOS 10.15.x Catalina 记录（第一篇）_city_happiness的博客-CSDN博客       准备工具：      Mac系统镜像（本文章以10.15为例）      VMware虚拟机（任何版本都可）      u">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213608.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213622.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213653.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215402.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215543.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-24%20181515.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215854.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20211929.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212545.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212518.png">
+<meta property="og:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20222110.png">
+<meta property="article:published_time" content="2023-05-11T11:00:19.000Z">
+<meta property="article:modified_time" content="2023-05-12T01:21:40.244Z">
+<meta property="article:author" content="haoming9245">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213608.png">
+  
+  
+  
+  <title>黑苹果MacOS安装过程（虚拟机） - hm9245-dnd&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"haoming9245.top","root":"/","version":"1.9.4","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21642899,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21642899.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>hm9245-dnd</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://t.mwm.moe/fj') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">黑苹果MacOS安装过程（虚拟机）</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        haoming9245
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-11 19:00" pubdate>
+          2023年5月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">黑苹果MacOS安装过程（虚拟机）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <hr>
+<p>本文章借鉴文章：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/383415378">https://zhuanlan.zhihu.com/p/383415378</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaocheng0404/article/details/106963575">最详细AMD Ryzen CPU，VMware 15安装macOS 10.15.x Catalina 记录（第一篇）_city_happiness的博客-CSDN博客</a></p>
+<ul>
+     <li>准备工具：</li>
+     <li><a target="_blank" rel="noopener" href="https://4hzjp0-my.sharepoint.com/:u:/g/personal/haoming9245_4hzjp0_onmicrosoft_com/ET66nGoSovBIuM6Q8Cek0foBhi1IFLmJ2xCAjymhctHwFA?e=kggJu2">Mac系统镜像</a>（本文章以10.15为例）</li>
+     <li>VMware虚拟机（任何版本都可）</li>
+     <li><a target="_blank" rel="noopener" href="https://github.com/DrDonk/unlocker/releases">unlocker</a></li>
+</ul>
+&nbsp;
+<ul>
+     <li>新建虚拟机之前先用unlocker解锁</li>
+</ul>
+&nbsp;
+<ul>
+     <li>首先，创建新虚拟机，选择自定义（高级）</li>
+</ul>
+&nbsp;
+<ul>
+     <li>VMware版本选择低于15.1的版本，不要高于，也不要太低</li>
+     <li><img class="alignnone size-full wp-image-428" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213608.png" srcset="/img/loading.gif" lazyload alt="" width="499" height="433" /></li>
+     <li></li>
+     <li>系统选择macOS 10.15</li>
+     <li></li>
+     <li>点“是”</li>
+     <li><img class="alignnone size-full wp-image-429" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213622.png" srcset="/img/loading.gif" lazyload alt="" width="400" height="156" /></li>
+     <li>选择第三个</li>
+     <li><img class="alignnone size-full wp-image-430" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213653.png" srcset="/img/loading.gif" lazyload alt="" width="499" height="433" /></li>
+     <li>之后按照自己硬件配置选择即可（除了硬盘要选80G之外）</li>
+</ul>
+&nbsp;
+<ul>
+     <li>在虚拟机设置中，USB兼容性选2.0，把第一个勾勾上</li>
+     <li><img class="alignnone size-medium wp-image-432" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215402.png" srcset="/img/loading.gif" lazyload alt="" width="660" height="720" /></li>
+     <li>到选项，如下图所设置</li>
+     <li><img class="alignnone size-medium wp-image-433" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215543.png" srcset="/img/loading.gif" lazyload alt="" width="660" height="720" /></li>
+     <li>（新增）将网络改回NAT，不然会没网（此步骤不确定，如果出现没网的情况则执行此步骤）</li>
+     <li><img class="alignnone size-medium wp-image-436" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-24%20181515.png" srcset="/img/loading.gif" lazyload alt="" width="660" height="720" /></li>
+</ul>
+&nbsp;
+<ul>
+     <li>之后（也是最重要的一环），更改虚拟机文件夹中后缀为vmx的文件</li>
+     <li><img class="alignnone size-medium wp-image-434" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215854.png" srcset="/img/loading.gif" lazyload alt="" width="1280" height="713" /></li>
+     <li>使用记事本打开，将下列文本加入最后一行</li>
+     <li>
+<pre class="hl"><code class="">smc.version = "0"
+cpuid.0.eax = "0000:0000:0000:0000:0000:0000:0000:1011"
+cpuid.0.ebx = "0111:0101:0110:1110:0110:0101:0100:0111"
+cpuid.0.ecx = "0110:1100:0110:0101:0111:0100:0110:1110"
+cpuid.0.edx = "0100:1001:0110:0101:0110:1110:0110:1001"
+cpuid.1.eax = "0000:0000:0000:0001:0000:0110:0111:0001"
+cpuid.1.ebx = "0000:0010:0000:0001:0000:1000:0000:0000"
+cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
+cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
+smbios.reflectHost = "TRUE"
+hw.model = "MacBookPro14,3"
+board-id = "Mac-551B86E5744E2388"
+keyboard.vusb.enable = "TRUE"
+mouse.vusb.enable = "TRUE"</code> 加入完之后保存</pre>
+&nbsp;</li>
+     <li>挂载好镜像之后就可以开启虚拟机了</li>
+     <li>进入虚拟机后，选择第四项</li>
+     <li>进入后，选择内置硬盘名字带有“VMware”的磁盘，右键，然后点击抹掉</li>
+     <li><img class="alignnone size-medium wp-image-423" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20211929.png" srcset="/img/loading.gif" lazyload alt="" width="959" height="720" /></li>
+     <li>点击之后，格式选择AFPS，名字随便填</li>
+     <li><img class="alignnone size-medium wp-image-426" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212545.png" srcset="/img/loading.gif" lazyload alt="" width="963" height="720" /></li>
+     <li></li>
+     <li>抹掉之后，就退出</li>
+     <li><img class="alignnone size-medium wp-image-425" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212518.png" srcset="/img/loading.gif" lazyload alt="" width="962" height="720" /></li>
+     <li>回到刚开始的界面，选择第二项</li>
+     <li>Mac的安装过程除了格式化都和Windows差不多，这里就不做例子了，安装完之后关闭虚拟机，然后把系统改回Mac</li>
+     <li><img class="alignnone size-medium wp-image-435" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20222110.png" srcset="/img/loading.gif" lazyload alt="" width="660" height="720" /></li>
+     <li>又是漫长的等待.......</li>
+     <li>等待完之后，国家选中国大陆，之后的设置就按照自己的喜好选择即可</li>
+</ul>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>黑苹果MacOS安装过程（虚拟机）</div>
+      <div>https://haoming9245.top/2023/05/11/黑苹果MacOS安装过程（虚拟机）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>haoming9245</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/05/12/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A7%81%E6%9C%89%E9%82%AE%E7%AE%B1%E7%9A%84%E6%80%BB%E7%BB%93/" title="搭建一个私有邮箱的总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">搭建一个私有邮箱的总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/11/%E5%85%8D%E8%B4%B9%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%E6%94%B6%E9%9B%86/" title="免费企业邮箱收集">
+                        <span class="hidden-mobile">免费企业邮箱收集</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"591d747f3440d709156c","clientSecret":"5a6c8d20040577a4f394f581915f3aea7bd0a0d1","repo":"hm9245-dnd","owner":"hm9245-dnd","admin":["name"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'bb2e31049ae36700af42ecb216595e52'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('mermaid' in window) {
+        mermaid.init();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

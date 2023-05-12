@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>搭建一个私有邮箱的总结</title>
+    <link href="/2023/05/12/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A7%81%E6%9C%89%E9%82%AE%E7%AE%B1%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+    <url>/2023/05/12/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A7%81%E6%9C%89%E9%82%AE%E7%AE%B1%E7%9A%84%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li>当我尝试摆脱资本家自己搭建一个邮箱时，但是这邮箱似乎遭到了资本家的制裁（bushi）</li>     <li>呃，哼哼，正题开始，有一天，我发现了<a href="http://ikun.email">ikun.email</a>这个邮箱，我就想能不能自己搭建一个邮箱，这就是噩梦的开头</li>     <li><img class="alignnone size-medium wp-image-456" src="https://hm9245-dnd.github.io/image/djsyyxzj/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-29%20192414.jpg" alt="" width="1280" height="662" /></li>     <li>中间遭到了不少Bug的袭击，导致我服务器关了好几次，导致我博客连续不能访问，原因有：系统环境不支持，DNS因为测试换来换去</li>     <li>没图强补（doge）</li></ul>Error 1016 ID： 1145141919810<p>DNS xxxxxxxxxxxxx</p><p>visit cloudflare.com&#x2F;xxxxxxxxxxx</p><p>&amp;nbsp;</p><p>&amp;nbsp;</p><p>&amp;nbsp;</p><p>&amp;nbsp;</p><p>Your ip：114.51.41.91</p><ul>     <li>当我还在因为解决BUG而沾沾自喜时，才知道自己在噩梦中</li>     <li>当我尝试将邮箱应用在我博客注册上时，发现怎么测试都会出错，都是报密码错，但是我密码没错啊，我尝试换一个插件，噩梦就快结束了</li>     <li>又是错误，但不同了，在网上搜索资料之后得出结论，我邮件被<del>资本家</del>（bushi）邮件服务器拒收了，我换过好几个邮箱都是这样</li>     <li><img class="alignnone size-medium wp-image-455" src="https://hm9245-dnd.github.io/image/djsyyxzj/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-29%20191354.jpg" alt="" width="921" height="720" /></li>     <li>所以，为什么我<del>会说他们是万恶的资本家呢</del>的邮件会被拒收呢，是因为他们为防止垃圾邮件，将部分自建邮箱给拒收了，所以你需要接入大厂的邮件服务，但是大厂的邮件服务过于昂贵，并且我目前也不需要那么多邮件发送量，而且有现成的免费邮箱，所以我就放弃这个了</li>     <li><img class="alignnone size-full wp-image-457" src="https://hm9245-dnd.github.io/image/djsyyxzj/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-29%20193918.jpg" alt="" width="1207" height="412" /></li>     <li>记录一下，准备卷铺盖走人，顺便试一下这个ikun.email能不能用</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>黑苹果MacOS安装过程（虚拟机）</title>
+    <link href="/2023/05/11/%E9%BB%91%E8%8B%B9%E6%9E%9CMacOS%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/"/>
+    <url>/2023/05/11/%E9%BB%91%E8%8B%B9%E6%9E%9CMacOS%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%88%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<hr><p>本文章借鉴文章：</p><p><a href="https://zhuanlan.zhihu.com/p/383415378">https://zhuanlan.zhihu.com/p/383415378</a></p><p><a href="https://blog.csdn.net/xiaocheng0404/article/details/106963575">最详细AMD Ryzen CPU，VMware 15安装macOS 10.15.x Catalina 记录（第一篇）_city_happiness的博客-CSDN博客</a></p><ul>     <li>准备工具：</li>     <li><a href="https://4hzjp0-my.sharepoint.com/:u:/g/personal/haoming9245_4hzjp0_onmicrosoft_com/ET66nGoSovBIuM6Q8Cek0foBhi1IFLmJ2xCAjymhctHwFA?e=kggJu2">Mac系统镜像</a>（本文章以10.15为例）</li>     <li>VMware虚拟机（任何版本都可）</li>     <li><a href="https://github.com/DrDonk/unlocker/releases">unlocker</a></li></ul>&nbsp;<ul>     <li>新建虚拟机之前先用unlocker解锁</li></ul>&nbsp;<ul>     <li>首先，创建新虚拟机，选择自定义（高级）</li></ul>&nbsp;<ul>     <li>VMware版本选择低于15.1的版本，不要高于，也不要太低</li>     <li><img class="alignnone size-full wp-image-428" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213608.png" alt="" width="499" height="433" /></li>     <li></li>     <li>系统选择macOS 10.15</li>     <li></li>     <li>点“是”</li>     <li><img class="alignnone size-full wp-image-429" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213622.png" alt="" width="400" height="156" /></li>     <li>选择第三个</li>     <li><img class="alignnone size-full wp-image-430" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20213653.png" alt="" width="499" height="433" /></li>     <li>之后按照自己硬件配置选择即可（除了硬盘要选80G之外）</li></ul>&nbsp;<ul>     <li>在虚拟机设置中，USB兼容性选2.0，把第一个勾勾上</li>     <li><img class="alignnone size-medium wp-image-432" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215402.png" alt="" width="660" height="720" /></li>     <li>到选项，如下图所设置</li>     <li><img class="alignnone size-medium wp-image-433" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215543.png" alt="" width="660" height="720" /></li>     <li>（新增）将网络改回NAT，不然会没网（此步骤不确定，如果出现没网的情况则执行此步骤）</li>     <li><img class="alignnone size-medium wp-image-436" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-24%20181515.png" alt="" width="660" height="720" /></li></ul>&nbsp;<ul>     <li>之后（也是最重要的一环），更改虚拟机文件夹中后缀为vmx的文件</li>     <li><img class="alignnone size-medium wp-image-434" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20215854.png" alt="" width="1280" height="713" /></li>     <li>使用记事本打开，将下列文本加入最后一行</li>     <li><pre class="hl"><code class="">smc.version = "0"cpuid.0.eax = "0000:0000:0000:0000:0000:0000:0000:1011"cpuid.0.ebx = "0111:0101:0110:1110:0110:0101:0100:0111"cpuid.0.ecx = "0110:1100:0110:0101:0111:0100:0110:1110"cpuid.0.edx = "0100:1001:0110:0101:0110:1110:0110:1001"cpuid.1.eax = "0000:0000:0000:0001:0000:0110:0111:0001"cpuid.1.ebx = "0000:0010:0000:0001:0000:1000:0000:0000"cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"smbios.reflectHost = "TRUE"hw.model = "MacBookPro14,3"board-id = "Mac-551B86E5744E2388"keyboard.vusb.enable = "TRUE"mouse.vusb.enable = "TRUE"</code> 加入完之后保存</pre>&nbsp;</li>     <li>挂载好镜像之后就可以开启虚拟机了</li>     <li>进入虚拟机后，选择第四项</li>     <li>进入后，选择内置硬盘名字带有“VMware”的磁盘，右键，然后点击抹掉</li>     <li><img class="alignnone size-medium wp-image-423" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20211929.png" alt="" width="959" height="720" /></li>     <li>点击之后，格式选择AFPS，名字随便填</li>     <li><img class="alignnone size-medium wp-image-426" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212545.png" alt="" width="963" height="720" /></li>     <li></li>     <li>抹掉之后，就退出</li>     <li><img class="alignnone size-medium wp-image-425" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20212518.png" alt="" width="962" height="720" /></li>     <li>回到刚开始的界面，选择第二项</li>     <li>Mac的安装过程除了格式化都和Windows差不多，这里就不做例子了，安装完之后关闭虚拟机，然后把系统改回Mac</li>     <li><img class="alignnone size-medium wp-image-435" src="https://hm9245-dnd.github.io/image/hpgazjc/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-23%20222110.png" alt="" width="660" height="720" /></li>     <li>又是漫长的等待.......</li>     <li>等待完之后，国家选中国大陆，之后的设置就按照自己的喜好选择即可</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>免费企业邮箱收集</title>
+    <link href="/2023/05/11/%E5%85%8D%E8%B4%B9%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%E6%94%B6%E9%9B%86/"/>
+    <url>/2023/05/11/%E5%85%8D%E8%B4%B9%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%E6%94%B6%E9%9B%86/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li><a href="http://wanwang.aliyun.com/mail"><del>阿里企业邮箱</del></a>（已收费）</li>     <li><a href="https://360.yandex.com"><del>Yandex Mail</del></a>（集成到了Yandex 360中，并且收费）</li>     <li><a href="http://qy.163.com"><del>网易企业邮箱</del></a>（已收费，但可以免费体验）</li>     <li><a href="https://exmail.qq.com">腾讯企业邮箱</a>（但是企业账号注册难（或者是BUG），客服不专业）</li>     <li><a href="http://www.zoho.com/mail">ZoHo Mail</a>（缺点:免费版不支持imap，pop3，想要用来挂网站发送验证码劝退）</li>     <li><del><a href="https://referworkspace.app.goo.gl/zn8y%20">Google Workspace</a></del>（已收费）</li>     <li><del><a href="http://outlook.office.com">Outlook</a></del>（商业版（E5）,免费版不支持更改域名，但是个人版和家庭版可以更改域名）</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>无宝塔定时备份服务器文件到onedrive</title>
+    <link href="/2023/05/11/%E6%97%A0%E5%AE%9D%E5%A1%94%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%87%E4%BB%B6%E5%88%B0onedrive/"/>
+    <url>/2023/05/11/%E6%97%A0%E5%AE%9D%E5%A1%94%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%87%E4%BB%B6%E5%88%B0onedrive/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li>这个的话，如果你服务器有宝塔面板的话，你可以使用计划任务+备份到OneDrive来实现，如果不使用宝塔面板，那就可以使用计划任务（NOT 宝塔）+rclone来实现</li></ul><h2></h2>&nbsp;<ul>     <li>先安装rclone</li>     <li><pre class="code"> curl https://rclone.org/install.sh | sudo bash</pre></li>     <li>安装好之后，运行以下指令</li>     <li><pre class="code"> rclone config</pre></li>     <li>之后，新建挂载</li>     <li>输入onedrive</li>     <li><img class="alignnone size-full wp-image-458" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095202.png" alt="" width="979" height="512" /></li>     <li>回车两次，到这里</li>     <li>输入31</li>     <li><img class="alignnone size-full wp-image-459" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095227.png" alt="" width="979" height="689" /></li>     <li>又回车两次，到这里输入1</li>     <li><img class="alignnone size-full wp-image-460" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095254.png" alt="" width="979" height="512" /></li>     <li>复制链接，如果你远程控制服务器的话就把127.0.0.1改成你服务器的IP地址，如果是wsl直接在真机的浏览器打开</li>     <li><img class="alignnone size-full wp-image-461" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095327.png" alt="" width="979" height="512" /></li>     <li>之后按照说明一步一步一步啊啊啊来（，之后看到以下页面就成功了</li>     <li><img class="alignnone size-medium wp-image-462" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095403.png" alt="" width="1280" height="662" /></li>     <li>输入1</li>     <li><img class="alignnone size-full wp-image-463" src="https://hm9245-dnd.github.io/image/nobt/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-02%20095431.png" alt="" width="979" height="512" /></li>     <li>之后就挂载完毕了</li>     <li>在计时任务（不是宝塔的）设置以下指令即可</li>     <li><pre class="code"> rclone copy （你要备份的文件夹） onedrive: #如果你要备份到主页，就留空，反之输入你要备份到的文件夹</pre></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【记录一下】闲的没事干用Kali扫了自己的主机</title>
+    <link href="/2023/05/11/%E3%80%90%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E3%80%91%E9%97%B2%E7%9A%84%E6%B2%A1%E4%BA%8B%E5%B9%B2%E7%94%A8Kali%E6%89%AB%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%BB%E6%9C%BA/"/>
+    <url>/2023/05/11/%E3%80%90%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E3%80%91%E9%97%B2%E7%9A%84%E6%B2%A1%E4%BA%8B%E5%B9%B2%E7%94%A8Kali%E6%89%AB%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%BB%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li>如题，之后用legion工具扫描漏洞，结果扫出来几个低危漏洞+ The anti-clickjacking X-Frame-Options header is not present.+ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS+ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type</li>     <li>翻译：</li>     <li>+ anti-clickjacking X-Frame-Options标头不存在。+ 未定义 X-XSS 保护标头。此标头可以提示用户代理防止某些形式的 XSS+ 未设置 X-Content-Type-Options标头。这可以允许用户代理以与 MIME 类型不同的方式呈现网站的内容</li>     <li>百科：</li>     <li>X-Frame-Options： 响应头表示是否允许浏览器加载frame等属性，有三个配置DENY禁止任何网页被嵌入,SAMEORIGIN只允许本网站的嵌套,ALLOW-FROM允许指定地址的嵌套X-XSS-Protection： 表示启用XSS过滤（禁用过滤为X-XSS-Protection: 0），mode=block表示若检查到XSS攻击则停止渲染页面<p>X-Content-Type-Options： 响应头用来指定浏览器对未指定或错误指定Content-Type资源真正类型的猜测行为，nosniff 表示不允许任何猜测</li><br>     <li>因为我的网站用的是NGINX，所以要加入这三个响应头</li><br>     <li></p><pre class="code">http{...add_header X-Frame-Options SAMEORIGIN;add_header X-XSS-Protection 1;add_header X-Content-Type-Options "nosniff";...}</pre></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ArchLinux安装教程</title>
+    <link href="/2023/05/11/ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    <url>/2023/05/11/ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li>其实ArchLinux安装非常简单，也可以运行安装脚本来进行安装（纯个人理解，非专业人士，不喜勿喷）</li>     <li>首先，准备Arch系统镜像</li>     <li>进入系统后，输入以下命令：</li>     <li class="code"><pre class="code">archinstall</pre></li>     <li>运行之后，等待测试镜像，测试完之后会进入以下界面</li>     <li><img class="alignnone size-full wp-image-439" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20161317.jpg" alt="" width="799" height="600" /></li>     <li>因为语言选项没有中文，第二个是键盘，所以跳过第一第二项，选择第三项，回车</li>     <li>往下找，选择“China”，回车</li>     <li><img class="alignnone size-full wp-image-440" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20161611.jpg" alt="" width="989" height="693" /></li>     <li></li>     <li>下一个跳过，将光标移到“Drive（s）”上</li>     <li>选择你要安装Arch的盘，回车</li>     <li><img class="alignnone size-full wp-image-441" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20161847.jpg" alt="" width="989" height="692" /></li>     <li>选好硬盘后，选择Disk Layout，回车</li>     <li>选择第二个，回车</li>     <li><img class="alignnone size-full wp-image-444" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20162302.jpg" alt="" width="990" height="692" /></li>     <li>选择ext4，回车</li>     <li><img class="alignnone size-full wp-image-442" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20162119.jpg" alt="" width="992" height="696" /></li>     <li>选择默认，回车</li>     <li><img class="alignnone size-full wp-image-443" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20162141.jpg" alt="" width="993" height="692" /></li>     <li>（可选）选好之后，选择Encryption password，回车</li>     <li>（可选）输入你想设置的密码，输入两次</li>     <li>（可选）设置好之后，将光标移动到Root password</li>     <li>（可选）输入你想要的密码</li>     <li>（这个必须，不然安装不了）将光标移动到User Accounts，回车，选择第一个，输入用户名，（必须，不然登录不了）输入密码</li>     <li>选择第一个，回车</li>     <li>输入用户名，回车</li>     <li>往下翻，找到confirm and exit，回车</li>     <li>（必选）选择User Account创建账户，选择第一个</li>     <li>将光标移到Profile，回车</li>     <li>desktop：想要桌面选这个</li>     <li>minimal：如果你不想系统太大的话选这个</li>     <li>server：如果你要装的是服务器选这个</li>     <li>xorg：想要亮服务器的选这个</li>     <li><img class="alignnone size-full wp-image-445" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20163013.jpg" alt="" width="988" height="692" /></li>     <li>本文以desktop为例，回车</li>     <li>选择你想要的桌面环境：</li>     <li>本文以kde为例，回车</li>     <li><img class="alignnone size-full wp-image-446" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20164217.jpg" alt="" width="991" height="693" /></li>     <li>选择显卡驱动，我用的AMD的显卡，选择AMD/ATI（英伟达或英特尔显卡的需要自己琢磨（脑补：So Nvidia fxxk you）），回车</li>     <li>选择Audio，回车</li>     <li>选择默认的，回车</li>     <li><img class="alignnone size-full wp-image-448" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20164609.jpg" alt="" width="991" height="692" /></li>     <li></li>     <li>（可选）将光标移动到Kennel，回车，之后选择自己想要的内核</li>     <li>（可选）将光标移动到addition packages，回车</li>     <li>输入你想要的附加包（例如firefox，chrome）</li>     <li><img class="alignnone size-full wp-image-452" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20170127.jpg" alt="" width="989" height="693" /></li>     <li>选择network configuration，回车</li>     <li>选择一个网络配置，回车（因为本文示例桌面是KDE，所以必须要选第三个）</li>     <li><img class="alignnone size-full wp-image-449" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20165015.jpg" alt="" width="991" height="694" /></li>     <li></li>     <li>将光标移动到Timezone，回车</li>     <li>选择Asia/shanghai（如果你在其他国家或地区，请选择你所在的国家或地区）</li>     <li><img class="alignnone size-full wp-image-450" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20165524.jpg" alt="" width="987" height="691" /></li>     <li>将光标移到optional repositories，回车</li>     <li>如果你想使用测试镜像，选第二个，反之第一个</li>     <li><img class="alignnone size-full wp-image-451" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20165722.jpg" alt="" width="991" height="693" /></li>     <li>之后往下，先移到第一个（保存），回车</li>     <li>选择最后一个，回车两次</li>     <li>选择install，回车两次（安装一个系统跟火箭发射似的2333333），5.....4......3......2......1，点火！之后就开始安装了</li>     <li>漫长的等待，到这里选择no</li>     <li><img class="alignnone size-full wp-image-453" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20172650.jpg" alt="" width="991" height="695" /></li>     <li>之后输入<pre class="code">reboot</pre>重启</li>     <li>成品展示</li>     <li><img class="alignnone size-full wp-image-454" src="https://hm9245-dnd.github.io/image/ArchLinux/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-27%20181015.jpg" alt="" width="793" height="595" /></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Steam Anti DNS Poisoning For Linux Document</title>
+    <link href="/2023/05/11/Steam%20Anti%20DNS%20Poisoning%20For%20Linux%20Document/"/>
+    <url>/2023/05/11/Steam%20Anti%20DNS%20Poisoning%20For%20Linux%20Document/</url>
+    
+    <content type="html"><![CDATA[<hr><p style="text-align: left;">本文档<span style="color: #000000;">适用于</span>Ubuntu，Debian、RedHat、CentOS及其它衍生系统，测试系统为Ubuntu18.04，CentOS7.9</p><ul>     <li><h2>自动安装</h2></li>     <li><code>wget wget.haoming.gq/install-ubuntu.sh</code></li>     <li>Redhat及其衍生系统输入</li>     <li><code>wget wget.haoming.gq/install-centos.sh</code></li>     <li><a href="#run">点击跳转到安装后运行</a></li></ul>&nbsp;<ul>     <li><h2>手动安装</h2></li>     <li>首先，防踩坑</li></ul><ul>     <li class="hl"><code class="">sudo apt update</code></li>     <li>RedHat及其衍生系统</li>     <li><pre class="code">yum update</pre></li></ul>&nbsp;<ul>     <li>安装好必需的库</li>     <li><pre class="hl"><code class="">sudo apt-get install openssl libssl-devsudo apt-get install libpcre3 libpcre3-devsudo apt-get install zlib1g-dev</code></pre></li>     <li>RedHat（CentOS）及其衍生系统输入以下指令</li>     <li><pre class="code">yum install pcre pcre-devel openssl openssl-devel zlib zlib-devel gcc wget</pre></li></ul>&nbsp;<ul>     <li>之后，下载文件</li>     <li><code class="">wget wget.haoming.gq/steam-anti-dns-poisoning-main-for-linux.tar.gz</code></li></ul>&nbsp;<ul>     <li>解压</li>     <li><pre class="hl"><code class="">tar -xf steam-anti-dns-poisoning-main-for-linux.tar.gz</code></pre></li></ul>&nbsp;<ul>     <li>加载文件夹</li>     <li><pre class="hl"><code class="">cd steam-anti-dns-poisoning-main-for-linux</code></pre></li></ul>&nbsp;<ul>     <li>安装nginx</li>     <li><pre class="code">./configure --prefix=/usr/local/nginx --with-openssl=/usr/local/openssl-1.0.1 --with-http_ssl_module</pre></li>     <li>RedHat（CentOS）及其衍生系统使用以下命令</li>     <li><pre class="code">./configure --prefix=/usr/local/nginx  --with-http_ssl_module</pre></li></ul>&nbsp;<ul>     <li>安装完成之后，将证书和hosts导入</li>     <li><pre class="hl"><code class="">sudo cp rootCA.crt /usr/local/share/ca-certificates</code></pre><h2></h2><pre class="hl"><code class="">echo hosts &gt;&gt; /etc/hosts</code></pre></li>     <li>RedHat（CentOS）及其衍生系统输入</li>     <li><pre class="code">cp rootCA.cet /etc/pki/ca-trust/source/anchors/</pre></li>     <li><code class="">echo hosts &gt;&gt; /etc/hosts</code></li></ul>&nbsp;<ul>     <li>RedHat（CentOS）及其衍生系统附加指令（我不知道为啥Ubuntu会附带压缩包里面的文件一起复制过去，而CentOS不行（恼））</li>     <li><pre class="code">cp -r conf /usr/local/nginx</pre></li></ul>&nbsp;<ul>     <li id="run">大功告成！Debian、Ubuntu及其衍生系统输入<pre class="code">nginx</pre>即可使用，RedHat（CentOS）及其衍生系统输入<pre class="code">/usr/local/nginx/sbin/nginx</pre></li>     <li>如果有错误的话欢迎指正</li></ul>&nbsp;<p>&amp;nbsp;</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Steam Anti DNS Poisoning For Mac Document</title>
+    <link href="/2023/05/11/Steam%20Anti%20DNS%20Poisoning%20For%20Mac%20Document/"/>
+    <url>/2023/05/11/Steam%20Anti%20DNS%20Poisoning%20For%20Mac%20Document/</url>
+    
+    <content type="html"><![CDATA[<hr><p>因为我没有用过苹果系统，部分内容是从必应查的，如果有错误请指正</p><ul>     <li>安装brew（需要的库较多，耐心等待）：</li></ul><ul>     <li class="hl">在终端先运行<code class="">/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"</code></li>     <li>随便选一个下载源</li>     <li>提示安装Git时点是</li>     <li>安装好之后再执行刚刚的指令</li>     <li>brew配置源的时候也是随便选</li>     <li>安装完之后重启终端或者运行<code class="">source /Users/（你的用户名）/.zprofile</code></li></ul><ul>     <li>安装完brew之后开始安装NGINX：</li>     <li><pre class="hl"><code class="">brew install nginx</code></pre></li></ul>&nbsp;<ul>     <li>安装完之后，安装wget（这个需要的库也多，也要等一下）</li>     <li><pre class="hl"><code class="">brew install wget</code></pre></li>     <li>安装完wget之后，wget配置文件、证书和hosts</li>     <li><code class="">wget wget.haoming.gq/nginx.conf</code></li>     <li><code class="">wget wget.haoming.gq/pixiv.conf</code></li>     <li><pre class="hl"><code class="">wget wget.haoming.gq/ca.zip</code></pre></li>     <li><pre class="hl"><code class="">wget wget.haoming.gq/hosts</code></pre></li>     <li>解压压缩包</li>     <li><pre class="hl"><code class="">unzip ca.zip -d /usr/local/etc/nginx/</code></pre></li>     <li>复制配置文件到nginx配置文件目录</li>     <li class="hl"><code class="">cp nginx.conf /usr/local/etc/nginx/</code><pre class="hl"><code class="">cp pixiv.conf /usr/local/etc/nginx/</code></pre></li>     <li>复制hosts文件到hosts文件存放目录</li>     <li><pre class="hl"><code class="">sudo cp hosts /etc</code></pre></li>     <li><a href="http://download.haoming.gq/rootCA.crt">下载根证书</a></li>     <li>安装证书</li>     <li>之后在钥匙串设置证书</li>     <li>选择你安装证书时添加的位置，找到<code class="">Pixiv.net</code></li>     <li><img class="alignnone size-medium wp-image-144" src="https://haoming.gq/wp-content/uploads/2023/01/屏幕截图-2023-01-25-094806-300x202.png" alt="" width="300" height="202" /></li>     <li>展开“信任”，“使用此证书时”选择“使用系统默认”</li>     <li><img class="alignnone size-medium wp-image-143" src="https://haoming.gq/wp-content/uploads/2023/01/屏幕截图-2023-01-25-094638-300x251.png" alt="" width="300" height="251" /></li>     <li>复制完和安装完证书后启动nginx（或者想用的时候）</li>     <li><pre class="hl"><code class="">nginx</code></pre></li>     <li>如果不想用了可以使用下列命令关闭</li>     <li><pre class="hl"><code class="">nginx -s stop</code> PS：我可能会在后续写个脚本来控制打开和关闭</pre></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Steam Anti DNS Poisoning</title>
+    <link href="/2023/05/11/Steam%20Anti%20DNS%20Poisoning/"/>
+    <url>/2023/05/11/Steam%20Anti%20DNS%20Poisoning/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li><h2>介绍：</h2></li>     <li>这是基于NGINX的加速器（注：不是翻墙工具！不是翻墙工具！不是翻墙工具！），里面会加速包括Steam，GitHub等被DNS污染的网站</li>     <li>This is an NGINX-based accelerator (note: not a circumvention tool!. Not a circumvention tool! Not a circumvention tool! ), which will speed up websites contaminated with DNS, including Steam, GitHub, etc</li></ul>&nbsp;<ul>     <li><h2>上法律：</h2></li>     <li><pre class="hl"><code class="">《国际联网暂行规定》第六条规定：“计算机信息网络直接进行国际联网，必须使用邮电部国家公用电信网提供的国际出入口信道。任何单位和个人不得自行建立或者使用其他信道进行国际联网。</code></pre></li>     <li>里面说明“<span style="color: #ff0000;">必须使用邮电部国家公用电信网提供的国际出入口信道</span>”，说明白点，就是比如我们上国外网站，使用的<span style="color: #ff0000;">还是国家提供的国际出入口信道</span>，除非你从国外拉一条光缆回来，那才叫违法</li>     <li>再拿同类型的软件<a href="http://steampp.net">Watt Tokkit</a>来举栗，可以看到他们官网是<span style="color: #ff0000;">经过备案的</span>，如果这是翻墙软件的话是无法通过备案的</li></ul>&nbsp;<ul>     <li><h2>如何使用？</h2></li>     <li>本软件只需要几步即可使用（不要放在中文目录下），首先，你要先安装证书，点击rootCA，之后点击安装证书，下一页，将证书存储到“<span style="color: #ff6600;">受信任的根证书颁发机构</span>”</li></ul>&nbsp;<ul>     <li>安装完证书之后打开"Bocchidesu.exe"，先选择要加速的网站，之后点击开关，不想用了可以关闭</li>     <li><img class="alignnone size-full wp-image-482" src="https://hm9245-dnd.github.io/image/SADNSP/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20092035.png" alt="" width="288" height="382" /></li></ul>&nbsp;<ul>     <li style="list-style-type: none;"><ul>     <li><a href="http://download.haoming.gq/steam-anti-dns-poisoning.7z">下载链接</a></li>     <li><a href="https://afdian.net/a/haoming">爱发电</a></li>     <li><a href="https://haoming.gq/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e7%9b%b4%e8%be%be/">源码直达</a></li></ul></li></ul>&nbsp;<ul>     <li><h2>想要加菜（网站）怎么办？</h2></li>     <li>如果你想加网站的话，可以在本文章评论区评论，或者在GayHub（bishi）发个Issues，我会积极回应的，正所谓无私贡献精神（doge）</li></ul>&nbsp;<ul>     <li><h2>等等o_o ....，你还想在<del>Linux，</del>（教程已出）Mac，<del>安卓，</del>IOS上用？</h2></li>     <li><del>Linux（教程已出），安卓</del>（搞了大半天才想起安卓7.0以上不信任用户证书，这个放弃开发。谷歌，我劝你善良！）：这<del>两</del>个平台还在研究中。之后会单独出文章</li>     <li>Mac：等我搞到黑苹果系统可以测试之后再说吧</li>     <li>IOS：想都不用想，苹果商店你懂的</li></ul>&nbsp;<ul>     <li><h2>怎么还要我等啊QAQ，为什么不反向代理谷歌，WikiPedia呢</h2></li>     <li>WikiPedia：污染技术似乎更牛x了，我在测试的时候直接超时</li>     <li>谷歌？<span style="color: #ff9900;">先看介绍<span style="color: #000000;">，就算我冒着被制裁的风险给你们做也做不出来，因为GFW这家伙直接封IP</span></span></li></ul>&nbsp;<ul>     <li>LICENSE</li>     <li><p dir="auto">中文:</p>这是 <a href="https://github.com/nginx/nginx">nginx/nginx</a>的一个分支，所以你应该始终遵循<a href="http://nginx.org/LICENSE" rel="nofollow">2-clause BSD-like licens</a><p>可视化工具是<a href="https://github.com/wnmp/wnmp/blob/master/LICENSE">GPL-3.0</a> 下的  <a href="https://github.com/wnmp/wnmp">wnmp&#x2F;wnmp</a> 的一部分</p><p>本项目是基于<a href="https://github.com/mashirozx/Pixiv-Nginx" target="_blank" rel="noopener">Pixiv-Nginx</a>的二次修改的版本，你也需要遵循<a href="https://github.com/mashirozx/Pixiv-Nginx/blob/main/LICENSE" target="_blank" rel="noopener">MIT LICENSE</a></li></p></ul>&nbsp;<p>&amp;nbsp;</p><p>&amp;nbsp;</p><p>&amp;nbsp;</p><ul>     <li>English：</li>     <li><p dir="auto">This is a fork of <a href="https://github.com/nginx/nginx">nginx/nginx</a>, so you should always follow its <a href="http://nginx.org/LICENSE" rel="nofollow">2-clause BSD-like licens</a>  .</p><p dir="auto">The visualized management tool is part of <a href="https://github.com/wnmp/wnmp">wnmp/wnmp</a>, which is under <a href="https://github.com/wnmp/wnmp/blob/master/LICENSE">GPL-3.0</a>. .</p></li>     <li><p dir="auto">This project is a modified version of <a href="https://github.com/mashirozx/Pixiv-Nginx" target="_blank" rel="noopener">Pixiv-Nginx</a>, and you also need to follow the <a href="https://github.com/mashirozx/Pixiv-Nginx/blob/main/LICENSE" target="_blank" rel="noopener">MIT LICENSE</a></p></li></ul>&nbsp;<p>&amp;nbsp;</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows7（sp2）</title>
+    <link href="/2023/05/11/Windows7%EF%BC%88sp2%EF%BC%89/"/>
+    <url>/2023/05/11/Windows7%EF%BC%88sp2%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<hr><!-- wp:paragraph --><ul><li><h2>前言</h2></li><li><p>这个补丁是给懒人党和防止微软关更新服务器而准备的</p></li></ul><p>&nbsp;</p><ul><li><h2>更新日志</h2></li></ul><p>&nbsp;</p><ol><li>V1.1:更新了一些补丁，添加了某60驱动带师</li><li>V1.2:更新了一些补丁（因为该系统生命周期结束，此版本是最后一个版本）</li></ol><p>&nbsp;</p><ul><li><h2>为什么添加某60驱动带师</h2></li><li>因为前言，加上Win7无法集成网卡驱动，所以加上了</li></ul><p>&nbsp;</p><ul><li><h2>有BUG怎么办</h2></li><li>如果有BUG，请在B站评论区或本博客反馈，UP会积极处理</li></ul><p>&nbsp;</p><ul><li>下载链接：<a href="https://4hzjp0-my.sharepoint.com/:u:/g/personal/haoming9245_4hzjp0_onmicrosoft_com/Ea1qDR23Gj9GtSxRNAknNtEBWl40iBFx4gXty9XopZpWNw?e=KO0XTs">https://4hzjp0-my.sharepoint.com/:u:/g/personal/haoming9245_4hzjp0_onmicrosoft_com/Ea1qDR23Gj9GtSxRNAknNtEBWl40iBFx4gXty9XopZpWNw?e=KO0XTs</a></li></ul><p>声明：</p><p>本定制系统为蜜雪冰城电脑店（haoming9245）制作，转载时请添加上本文或B站视频链接</p><!-- /wp:paragraph --><!-- wp:code --><h1 class="wp-block-code"><code></code></h1><!-- /wp:code -->]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows8.1</title>
+    <link href="/2023/05/11/Windows8.1/"/>
+    <url>/2023/05/11/Windows8.1/</url>
+    
+    <content type="html"><![CDATA[<hr><ul>     <li><h2>前言</h2></li>     <li>这个补丁是给懒人党和防止微软关更新服务器而准备的</li></ul>&nbsp;<ul>     <li><h2>更新日志</h2></li></ul>&nbsp;<ol>     <li>V1.1:更新了一些补丁</li>     <li>同上（doge）</li></ol>&nbsp;<ul>     <li><h2>有BUG怎么办</h2></li>     <li>如果有BUG，请在B站评论区或本博客反馈，UP会积极处理</li></ul>&nbsp;<ul>     <li>下载链接：<a href="https://4hzjp0-my.sharepoint.com/:u:/g/personal/haoming9245_4hzjp0_onmicrosoft_com/ESDn0neW415CrXqvYW4FV4EBQrQ35WrR7lAoiyeeATOHvA?e=pyZtKr">windows8.1.gho</a></li></ul>声明：<p>本定制系统为蜜雪冰城电脑店（haoming9245）制作，转载时请添加上本文或B站视频链接</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
